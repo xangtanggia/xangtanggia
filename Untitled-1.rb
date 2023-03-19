@@ -277,6 +277,7 @@ def bao()
                                                                             %%####@&%&@&@@@@@@@@@@@@@@@@@@@@@&%&@@@@@@@&&&&&@&&&&&&&&&&&&&&&@&&&&%")
 end
 def main()
+    system("cls")
     puts("                                                                                                  Kinh chao quy khan gia")
     puts("                                                                                                  Pham Dong Gia Bao")
     bao()

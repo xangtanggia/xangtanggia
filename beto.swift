@@ -48,6 +48,7 @@ func bubble_short(x:[Int])->[Int]{
     }
     return a.count
 }
+func
 print(bubble_short(x:[1,2,3,2,6,7,33,4,5,4,3,222,235,565]))
 
 print(kiem_tra_tam_giac_deu(a:15,b:15,c:15))
