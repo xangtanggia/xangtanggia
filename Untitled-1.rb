@@ -290,7 +290,7 @@ def main()
                                                                                                 7.DEM SO LUONG CAC SO LE TRONG KHOANG TU A DEN B
                                                                                                 8.TINH TRUNG BINH CONG TU MANG CHO TRUOC
                                                                                                 9.TIM UOC SO CUA MOT SO N
-                                                                                                10.TIM UOC CHUNG CUA CUA HAI A VA B
+                                                                                                10.TIM UOC CHUNG CUA A VA B
                                                                                                 11.TIM UOC CHUNG LON NHAT CUA A VA B
                                                                                                 12.HOAN VI
                                                                                                 13.CHINH HOP
@@ -348,6 +348,19 @@ def main()
         a=a.to_i
         b=b.to_i
         print(dem_so_cac_so_le(a,b))
+    elsif x=="9"
+        print("Nhap so n: ")
+        n=gets.chomp
+        n=n.to_i
+        tim_uoc_so(n)
+    elsif x=="10"
+        print("Vui long nhap so a: ")
+        a=gets.chomp
+        print("Vui long nhap so b: ")
+        b=gets.chomp
+        a=a.to_i
+        b=b.to_i
+        tim_uoc_chung(a,b)
     end
 end
 main()
