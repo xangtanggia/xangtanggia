@@ -86,7 +86,7 @@ def tim_uoc_so(a)
         end
     end
 end
-tim_uoc_so(15)
+
 def tim_uoc_chung(a,b)
     max=0
     if(a>b)
@@ -290,7 +290,7 @@ def main()
                                                                                                 7.DEM SO LUONG CAC SO LE TRONG KHOANG TU A DEN B
                                                                                                 8.TINH TRUNG BINH CONG TU MANG CHO TRUOC
                                                                                                 9.TIM UOC SO CUA MOT SO N
-                                                                                                10.TIM UOC CHUNG CUA CUA HAI A VA B
+                                                                                                10.TIM UOC CHUNG CUA A VA B
                                                                                                 11.TIM UOC CHUNG LON NHAT CUA A VA B
                                                                                                 12.HOAN VI
                                                                                                 13.CHINH HOP
@@ -353,6 +353,14 @@ def main()
         n=gets.chomp
         n=n.to_i
         tim_uoc_so(n)
+    elsif x=="10"
+        print("Vui long nhap so a: ")
+        a=gets.chomp
+        print("Vui long nhap so b: ")
+        b=gets.chomp
+        a=a.to_i
+        b=b.to_i
+        tim_uoc_chung(a,b)
     end
 end
 main()
