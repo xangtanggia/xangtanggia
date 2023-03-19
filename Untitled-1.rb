@@ -86,7 +86,7 @@ def tim_uoc_so(a)
         end
     end
 end
-
+tim_uoc_so(15)
 def tim_uoc_chung(a,b)
     max=0
     if(a>b)
@@ -348,6 +348,11 @@ def main()
         a=a.to_i
         b=b.to_i
         print(dem_so_cac_so_le(a,b))
+    elsif x=="9"
+        print("Nhap so n: ")
+        n=gets.chomp
+        n=n.to_i
+        tim_uoc_so(n)
     end
 end
 main()
