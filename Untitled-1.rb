@@ -362,6 +362,35 @@ def main()
         a=a.to_i
         b=b.to_i
         tim_uoc_chung(a,b)
+    elsif x=="11"
+        print("Vui long nhap so a: ")
+        a=gets.chomp
+        print("Vui long nhap so b: ")
+        b=gets.chomp
+        a=a.to_i
+        b=b.to_i  
+        tim_uoc_chung_max(a,b)
+    elsif x=="12"
+        print("Vui long nhap so n: ")
+        n=gets.chomp
+        n=n.to_i
+        print(tinh_giai_thua(n))
+    elsif x=="13"
+        print("Vui long nhap so n: ")
+        n=gets.chomp
+        print("Vui long nhap so m: ")
+        m=gets.chomp
+        n=n.to_i
+        m=m.to_i
+        print(chinh_hop(n,m))
+    elsif x=="14"
+        print("Vui long nhap so n: ")
+        n=gets.chomp
+        print("Vui long nhap so m: ")
+        m=gets.chomp
+        n=n.to_i
+        m=m.to_i
+        print(to_hop(n,m))
     end
 end
 main()
