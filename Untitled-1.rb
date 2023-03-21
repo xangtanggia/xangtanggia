@@ -297,11 +297,11 @@ def main()
                                                                                                 13.CHINH HOP
                                                                                                 14.TO HOP
                                                                                                 15.SAP XEP MANG
-                                                                                                14.TINH LAI DON
-                                                                                                15.DOI TU RADIAN SANG DO
-                                                                                                16.CHECK TAM GIAC DEU
-                                                                                                17.CHECK DIEM THUOC MAT CAU
-                                                                                                18.EXIT")
+                                                                                                16.TINH LAI DON
+                                                                                                17.DOI TU RADIAN SANG DO
+                                                                                                18.CHECK TAM GIAC DEU
+                                                                                                19.CHECK DIEM THUOC MAT CAU
+                                                                                                20.EXIT")
     print("Vui long chon che do: ")
     x=gets.chomp
     if x=="1"
@@ -391,6 +391,17 @@ def main()
         n=n.to_i
         m=m.to_i
         print(to_hop(n,m))
+    elsif x=="16"
+        print("Vui long nhap tien goc: ")
+        tien_goc=gets.chomp
+        print("Vui long nhap lai suat: ")
+        lai_suat=gets.chomp
+        print("Vui long nhap ki han: ")
+        ki_han=gets.chomp
+        tien_goc=tien_goc.to_f
+        lai_suat=lai_suat.to_f
+        ki_han=ki_han.to_f
+        print(tinh_lai_don(tien_goc,lai_suat,ki_han))
     end
 end
 main()
