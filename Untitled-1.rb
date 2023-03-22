@@ -153,12 +153,12 @@ def bubble_sort(n)
 end
 
 
-def tinh_lai_don(tien_goc, lai_suat, ki_han)
-    return tien_goc*(lai_suat/100)*ki_han
+def tinh_lai_theo_ngay(tien_goc, lai_suat, so_ngay_gui)
+    return tien_goc*(lai_suat/100)*(so_ngay_gui/365)
 end
 
-def tinh_lai_kep(tien_goc,lai_suat,ki_han)
-    return tien_goc*(lai_suat/(100*12))*ki_han
+def tinh_lai_theo_thang(tien_goc,lai_suat,so_thang_gui)
+    return tien_goc*(lai_suat/(100*12))*so_thang_gui
 end
 
 def rad_to_deg(rad)
@@ -297,11 +297,13 @@ def main()
                                                                                                 13.CHINH HOP
                                                                                                 14.TO HOP
                                                                                                 15.SAP XEP MANG
-                                                                                                16.TINH LAI DON
-                                                                                                17.DOI TU RADIAN SANG DO
-                                                                                                18.CHECK TAM GIAC DEU
-                                                                                                19.CHECK DIEM THUOC MAT CAU
-                                                                                                20.EXIT")
+                                                                                                16.TINH LAI THEO NGAY
+                                                                                                17.TINH LAI THEO THANG
+                                                                                                18.DOI TU RADIAN SANG DO
+                                                                                                19.CHECK TAM GIAC DEU
+                                                                                                20.CHECK DIEM THUOC MAT CAU
+                                                                                                21.VE HINH CON MEO
+                                                                                                22.EXIT")
     print("Vui long chon che do: ")
     x=gets.chomp
     if x=="1"
@@ -396,12 +398,43 @@ def main()
         tien_goc=gets.chomp
         print("Vui long nhap lai suat: ")
         lai_suat=gets.chomp
-        print("Vui long nhap ki han: ")
-        ki_han=gets.chomp
+        print("Vui long nhap so ngay gui: ")
+        so_ngay_gui=gets.chomp
         tien_goc=tien_goc.to_f
         lai_suat=lai_suat.to_f
-        ki_han=ki_han.to_f
-        print(tinh_lai_don(tien_goc,lai_suat,ki_han))
+        so_ngay_gui=so_ngay_gui.to_f
+        print(tinh_lai_theo_ngay(tien_goc,lai_suat,so_ngay_gui))
+    elsif x=="17"
+        print("Vui long nhap tien goc: ")
+        tien_goc=gets.chomp
+        print("Vui long nhap lai suat: ")
+        lai_suat=gets.chomp
+        print("Vui long nhap so thang gui: ")
+        so_ngay_gui=gets.chomp
+        tien_goc=tien_goc.to_f
+        lai_suat=lai_suat.to_f
+        so_thang_gui=so_thang_gui.to_f
+        print(tinh_lai_theo_thang(tien_goc,lai_suat,so_thang_gui))
+    elsif x=="18"
+        print("Vui long nhap goc (dv: radian): ")
+        goc=gets.chomp
+        goc=goc.to_f
+        print(rad_to_deg(goc))
+    elsif x=="19"
+        print("Vui long canh a: ")
+        a=gets.chomp
+        print("Vui long canh b: ")
+        b=gets.chomp
+        print("Vui long canh c: ")
+        c=gets.chomp
+        a=a.to_f
+        b=b.to_f
+        c=c.to_f
+        print(kiem_tra_tam_giac_deu(a,b,c))
+    elsif x=="21"
+        ve_hinh_con_meo()
+    elsif x=="22"
+        exit
     end
 end
 main()
