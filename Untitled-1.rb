@@ -75,7 +75,7 @@ def tinh_trung_binh_cong(a)
     (0..(a.length()-1)).each do |i|
         sum+=a[i]
     end
-    avg=sum/(a.length())
+    avg=sum.to_f/(a.length())
     return avg
 end
 
@@ -277,6 +277,7 @@ def bao()
                                                                             %%####@&%&@&@@@@@@@@@@@@@@@@@@@@@&%&@@@@@@@&&&&&@&&&&&&&&&&&&&&&@&&&&%")
 end
 def main()
+    
     system("cls")
     puts("                                                                                                  Kinh chao quy khan gia")
     puts("                                                                                                  Pham Dong Gia Bao")
@@ -303,19 +304,20 @@ def main()
                                                                                                 19.CHECK TAM GIAC DEU
                                                                                                 20.CHECK DIEM THUOC MAT CAU
                                                                                                 21.VE HINH CON MEO
-                                                                                                22.EXIT")
+                                                                                                22.VX
+                                                                                                23.EXIT")
     print("Vui long chon che do: ")
     x=gets.chomp
     if x=="1"
         print("Vui nhap so n de tinh tong tu 1 den n: ")
         fuck=gets.chomp
         fuck=fuck.to_i
-        print(tinh_tong(fuck))
+        print("Ket qua: ",tinh_tong(fuck))
     elsif x=="2"
         print("Nhap ban kinh mat cau: ")
         fuck=gets.chomp
         fuck=fuck.to_f
-        print(Vcau(fuck))
+        print("Ket qua: ",Vcau(fuck))
     elsif x=="3"
         print("Nhap quang đuong: ")
         f1=gets.chomp
@@ -324,17 +326,17 @@ def main()
         f1=f1.to_f
         f2=f2.to_f
         print("Van toc tinh toan duoc la: ")
-        print(f1/f2)
+        print("Ket qua: ",f1/f2)
     elsif x=="4"
         print("Vui lòng nhap so n: ")
         n=gets.chomp
         n=n.to_i
-        print(so_chan(n))
+        print("So cac so chan: ",so_chan(n))
     elsif x=="5"
         print("Vui long nhap mot con so: ")
         n=gets.chomp
         n=n.to_i
-        print(kiem_tra_tinh_chan_le(n))
+        print("So ban nhap la so: ",kiem_tra_tinh_chan_le(n))
     elsif x=="6"
         print("Vui long nhap ngay sinh: ")
         d=gets.chomp
@@ -342,7 +344,7 @@ def main()
         m=gets.chomp
         d=d.to_i
         m=m.to_i
-        print(cung_hoang_dao(d,m))
+        print("Ban thuoc cung: ",cung_hoang_dao(d,m))
     elsif x=="7"
         print("Nhap so a: ")
         a=gets.chomp
@@ -351,6 +353,18 @@ def main()
         a=a.to_i
         b=b.to_i
         print(dem_so_cac_so_le(a,b))
+    elsif x=="8"
+        print("Vui long nhap so phan tu trong mang: ")
+        n=gets.chomp
+        n=n.to_i
+        arr=[]
+        (0..(n-1)).each do |i|
+            print("Vui long nhap phan tu thu ",i+1,": ")
+            a=gets.chomp
+            a=a.to_i
+            arr.push(a)
+        end
+        print("Ket qua: ",tinh_trung_binh_cong(arr))
     elsif x=="9"
         print("Nhap so n: ")
         n=gets.chomp
@@ -434,7 +448,10 @@ def main()
     elsif x=="21"
         ve_hinh_con_meo()
     elsif x=="22"
+        
+    elsif x=="23" 
         exit
     end
+
 end
 main()
