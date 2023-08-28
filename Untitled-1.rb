@@ -82,9 +82,10 @@ end
 def tim_uoc_so(a)
     (1..a).each do |i|
         if a % i==0
-            puts(i)
+            print(i," ")
         end
     end
+    puts
 end
 
 def tim_uoc_chung(a,b)
@@ -96,9 +97,10 @@ def tim_uoc_chung(a,b)
     end
     (1..max).each do |i|
         if a % i==0 and b % i ==0 
-            puts(i)
+            print(i," ")
         end
     end
+    puts
 end
 
 def tim_uoc_chung_max(a,b)
@@ -297,14 +299,14 @@ def main()
                                                                                                 12.HOAN VI
                                                                                                 13.CHINH HOP
                                                                                                 14.TO HOP
-                                                                                                15.SAP XEP MANG
+                                                                                                15.SAP XEP MANG TU NHO DEN LON
                                                                                                 16.TINH LAI THEO NGAY
                                                                                                 17.TINH LAI THEO THANG
                                                                                                 18.DOI TU RADIAN SANG DO
                                                                                                 19.CHECK TAM GIAC DEU
                                                                                                 20.CHECK DIEM THUOC MAT CAU
                                                                                                 21.VE HINH CON MEO
-                                                                                                22.VX
+                                                                                                22.Adolf Hitler
                                                                                                 23.EXIT")
     print("Vui long chon che do: ")
     x=gets.chomp
@@ -368,6 +370,7 @@ def main()
     elsif x=="9"
         print("Nhap so n: ")
         n=gets.chomp
+        puts("Cac uoc so cua "+n+" la:")
         n=n.to_i
         tim_uoc_so(n)
     elsif x=="10"
@@ -375,6 +378,7 @@ def main()
         a=gets.chomp
         print("Vui long nhap so b: ")
         b=gets.chomp
+        puts("Cac uoc so chung cua hai so "+a+" va "+b+" la:")
         a=a.to_i
         b=b.to_i
         tim_uoc_chung(a,b)
@@ -383,30 +387,46 @@ def main()
         a=gets.chomp
         print("Vui long nhap so b: ")
         b=gets.chomp
+        puts("Uoc so chung lon nhat cua hai so "+a+" va "+b+" la:")
         a=a.to_i
         b=b.to_i  
         tim_uoc_chung_max(a,b)
     elsif x=="12"
         print("Vui long nhap so n: ")
         n=gets.chomp
+        print("Giai thua cua "+n+" la: ")
         n=n.to_i
         print(tinh_giai_thua(n))
     elsif x=="13"
         print("Vui long nhap so n: ")
         n=gets.chomp
-        print("Vui long nhap so m: ")
+        print("Vui long nhap so k: ")
         m=gets.chomp
+        print("So chinh hop chap "+m+" cua "+n+" phan tu la: ")
         n=n.to_i
         m=m.to_i
         print(chinh_hop(n,m))
     elsif x=="14"
         print("Vui long nhap so n: ")
         n=gets.chomp
-        print("Vui long nhap so m: ")
+        print("Vui long nhap so k: ")
         m=gets.chomp
+        print("So to hop chap "+m+" cua "+n+" phan tu la: ")
         n=n.to_i
         m=m.to_i
         print(to_hop(n,m))
+    elsif x=="15"
+        print("Vui long nhap so phan tu trong mang: ")
+        n=gets.chomp
+        n=n.to_i
+        arr=[]
+        (0..(n-1)).each do |i|
+            print("Vui long nhap phan tu thu ",i+1,": ")
+            a=gets.chomp
+            a=a.to_i
+            arr.push(a)
+        end
+        print("Mang da duoc sap xep la: ",bubble_sort(arr))
     elsif x=="16"
         print("Vui long nhap tien goc: ")
         tien_goc=gets.chomp
@@ -414,6 +434,7 @@ def main()
         lai_suat=gets.chomp
         print("Vui long nhap so ngay gui: ")
         so_ngay_gui=gets.chomp
+        print("Tien lai sau ",so_ngay_gui," ngay la: ")
         tien_goc=tien_goc.to_f
         lai_suat=lai_suat.to_f
         so_ngay_gui=so_ngay_gui.to_f
@@ -424,7 +445,8 @@ def main()
         print("Vui long nhap lai suat: ")
         lai_suat=gets.chomp
         print("Vui long nhap so thang gui: ")
-        so_ngay_gui=gets.chomp
+        so_thang_gui=gets.chomp
+        print("Tien lai sau ",so_thang_gui," thang la: ")
         tien_goc=tien_goc.to_f
         lai_suat=lai_suat.to_f
         so_thang_gui=so_thang_gui.to_f
@@ -433,7 +455,7 @@ def main()
         print("Vui long nhap goc (dv: radian): ")
         goc=gets.chomp
         goc=goc.to_f
-        print(rad_to_deg(goc))
+        print("Goc ",goc," radian bang ",rad_to_deg(goc)," do")
     elsif x=="19"
         print("Vui long canh a: ")
         a=gets.chomp
@@ -444,11 +466,93 @@ def main()
         a=a.to_f
         b=b.to_f
         c=c.to_f
-        print(kiem_tra_tam_giac_deu(a,b,c))
+        if (kiem_tra_tam_giac_deu(a,b,c))
+            print("Day la tam giac deu")
+        else
+            print("Day khong phai tam giac deu")
+        end
+    elsif x=="20"
+        puts("Phuong trinh duong tron co dang x^2+y^2+z^2-2ax-2by-2cz+d=0")
+        print("Vui long nhap he so a: ")
+        a=gets.chomp
+        print("Vui long nhap he so b: ")
+        b=gets.chomp
+        print("Vui long nhap he so c: ")
+        c=gets.chomp
+        print("Vui long nhap he so d: ")
+        d=gets.chomp
+        puts("Vui long nhap toa do diem can kiem tra: ")
+        print("Hoanh do x: ")
+        x=gets.chomp
+        print("Tung do y: ")
+        y=gets.chomp
+        print("Cao do z: ")
+        z=gets.chomp
+        a=a.to_i
+        b=b.to_i
+        c=c.to_i
+        d=d.to_i
+        x=x.to_i
+        y=y.to_i
+        z=z.to_i
+        check=earth(a,b,c,d,x,y,z)
+        if(check)
+            print("Diem (",x,";",y,";",z,") nam tren mat cau")
+        else
+            print("Diem (",x,";",y,";",z,") khong nam tren mat cau")
+        end
     elsif x=="21"
         ve_hinh_con_meo()
     elsif x=="22"
-        
+        print("
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                           .,/(%%%%%&%%%%#/*.                                                                                           
+                                                                                   ,#&@@@@@@@@@@@@@#(@@@@@@@@@@@@@@%*                                                                                   
+                                                                              *@@@@@@@@@@@@@@@@@@*    ,&@@@@@@@@@@@@@@@@@(                                                                              
+                                                                          *@@@@@@@@@@@@@@@@@@@#          /@@@@@@@@@@@@@@@@@@@(                                                                          
+                                                                      .#@@@@@@@@@@@@@@@@@@@&*              ,@@@@@@@@@@@@@@@@@@@@%.                                                                      
+                                                                    /@@@@@@@@@@@@@@@@@@@@#.               *&@@@@@@@@@@@@@@@@@@@@@@@(                                                                    
+                                                                 .#@@@@@@@@@@@@@@@@@@@&*               .#@@@@@@@@@@@@@@@@@@@@@@@@@@@@%,                                                                 
+                                                                %@@@@@@@@@@@@@@@@@@@#.               *&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&.                                                               
+                                                              (@@@@@@@@@@@@@@@@@@&*               .#@@@@@@@@@@@@@@@&,,%@@@@@@@@@@@@@@@@@@%                                                              
+                                                            .@@@@@@@@@@@@@@@@@@#                *@@@@@@@@@@@@@@@@#      (@@@@@@@@@@@@@@@@@@*                                                            
+                                                           /@@@@@@@@@@@@@@@@@*                #@@@@@@@@@@@@@@@&,          ,&@@@@@@@@@@@@@@@@(                                                           
+                                                          (@@@@@@@@@@@@@@@%.               .@@@@@@@@@@@@@@@@%                (@@@@@@@@@@@@@@@%                                                          
+                                                         *@@@@@@@@@@@@@@@@@@&,               .%@@@@@@@@@@&*                    ,&@@@@@@@@@@@@@(                                                         
+                                                        .@@@@@@@@@@@@@@@@@@@@@@/                (@@@@@@#                          (@@@@@@@@@@@@*                                                        
+                                                        @@@@@@@@@@@@@@@@@@@@@@@@@&,               ,%&*                              ,%@@@@@@@@@@                                                        
+                                                       *@@@@@@@@#. /@@@@@@@@@@@@@@@@(                              /@@/                (@@@@@@@@/                                                       
+                                                       %@@@@@&*      .%@@@@@@@@@@@@@@@&,                         %@@@@@@&.               ,%@@@@@@                                                       
+                                                       %@@@#            *@@@@@@@@@@@@@@@@(                    /@@@@@@@@@@@@/                (@@@@                                                       
+                                                      .&@&,               .&@@@@@@@@@@@@@@@,                 &@@@@@@@@@@@@@@@&.              .%@@.                                                      
+                                                       %@@@@(                /@@@@@@@@@@#                      (@@@@@@@@@@@@@@@@/          /@@@@@                                                       
+                                                       #@@@@@@&,               .%@@@@&*                          .%@@@@@@@@@@@@@@@%.    .%@@@@@@&                                                       
+                                                       ,@@@@@@@@@(                /(                                (@@@@@@@@@@@@@@@@//@@@@@@@@@*                                                       
+                                                        #@@@@@@@@@@&,                            .#@@&,               ,%@@@@@@@@@@@@@@@@@@@@@@@%                                                        
+                                                         &@@@@@@@@@@@@(                        /@@@@@@@@(                /@@@@@@@@@@@@@@@@@@@@@,                                                        
+                                                         ,&@@@@@@@@@@@@@&,                   %@@@@@@@@@@@@&,               .&@@@@@@@@@@@@@@@@@*                                                         
+                                                          ,&@@@@@@@@@@@@@@@(              /@@@@@@@@@@@@@@@@(                /@@@@@@@@@@@@@@@@/                                                          
+                                                            @@@@@@@@@@@@@@@@@&,         &@@@@@@@@@@@@@@@@,               .%@@@@@@@@@@@@@@@@@                                                            
+                                                             (@@@@@@@@@@@@@@@@@@(    *@@@@@@@@@@@@@@@@(                /@@@@@@@@@@@@@@@@@@#                                                             
+                                                              ,&@@@@@@@@@@@@@@@@@@&&@@@@@@@@@@@@@@@&,               .%@@@@@@@@@@@@@@@@@@@*                                                              
+                                                                ,&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@(                /@@@@@@@@@@@@@@@@@@@@*                                                                
+                                                                  ,%@@@@@@@@@@@@@@@@@@@@@@@@@@&,               .%@@@@@@@@@@@@@@@@@@@@*                                                                  
+                                                                     /@@@@@@@@@@@@@@@@@@@@@@(                /@@@@@@@@@@@@@@@@@@@@(.                                                                    
+                                                                       ./@@@@@@@@@@@@@@@@@@@&,            .%@@@@@@@@@@@@@@@@@@@(.                                                                       
+                                                                           ,&@@@@@@@@@@@@@@@@@@(        /@@@@@@@@@@@@@@@@@@&,                                                                           
+                                                                                (@@@@@@@@@@@@@@@@&,  .%@@@@@@@@@@@@@@@@#                                                                                
+                                                                                     .(&&@@@@@@@@@@@@@@@@@@@@@@@&(,                                                                                     
+                                                                                                  ....                                                                                                  
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                        
+                                                                                                                                                                                                       ")
     elsif x=="23" 
         exit
     end
