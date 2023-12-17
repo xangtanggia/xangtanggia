@@ -122,9 +122,10 @@ func Vietnam()->Void{
     print("9. Tinh to hop")
     print("10.Cac hang dang thuc dang nho")
     print("11.Ve bang cuu chuong")
+    print("12.LOL")
 
 }
-Vietnam()
+
 func Tinh_tong(a:Float64,b:Float64)->Float64{
     return a+b
 }
@@ -182,4 +183,51 @@ print(tinh_tong_day_so_2(n:90))
 var v:Float
 v=9
 print(v.squareRoot())
-    
+func main()->Void{
+    Vietnam()
+    print("Vui long nhap che do ban muon dung: ")
+    var mode=readLine()!
+    var modeInt = Int(mode)!
+    if(modeInt==1){
+        print("Vui long nhap so a: ")
+        var a = readLine()!
+        var aFt64 = Float64(a)!
+        print("Vui long nhap so b: ")
+        var b = readLine()!
+        var bFt64 = Float64(b)!
+        print("a + b =",Tinh_tong(a:aFt64,b:bFt64))
+    }
+    else if(modeInt==2){
+        print("Vui long nhap so a: ")
+        var a = readLine()!
+        var aFt64 = Float64(a)!
+        print("Vui long nhap so b: ")
+        var b = readLine()!
+        var bFt64 = Float64(b)!
+        print("a - b =",Tinh_hieu(a:aFt64,b:bFt64))
+    }
+    else if(modeInt==3){
+        print("Vui long nhap so a: ")
+        var a = readLine()!
+        var aFt64 = Float64(a)!
+        print("Vui long nhap so b: ")
+        var b = readLine()!
+        var bFt64 = Float64(b)!
+        print("a * b =",Tinh_tich(a:aFt64,b:bFt64))
+    }
+    else if(modeInt==4) {
+        print("Vui long nhap so a: ")
+        var a = readLine()!
+        var aFt64 = Float64(a)!
+        print("Vui long nhap so b: ")
+        var b = readLine()!
+        var bFt64 = Float64(b)!
+        print("a / b =",Tinh_thuong(a:aFt64,b:bFt64))
+        
+    }
+    else if(modeInt==5){
+        
+    }
+
+}
+main()
